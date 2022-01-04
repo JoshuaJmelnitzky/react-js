@@ -1,0 +1,33 @@
+.card{
+    height: 416px ; 
+}
+
+.card-img-top{
+    height: 300px;
+}
+
+.productText{
+    text-align: center;
+}
+
+.productMargin{
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.productBrand{
+    color: #999;;
+    font-size: 18px;; 
+}
+
+.productModel{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 0 8px;
+}
+
+.productPrice{
+    color: #90c512;
+    font-size: 20px;
+    font-weight: 700;
+}

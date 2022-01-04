@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { getFetch } from '../../helpers/mock'
-import Item from './Item'
+import ItemList from './ItemList'
 
 const ItemListContainer = ({greeting}) => {
     const [products, setProducts] = useState([])
@@ -21,11 +21,7 @@ const ItemListContainer = ({greeting}) => {
 
         <div>
             <h1>{greeting}</h1>
-            { loading? <h2>Cargando ...</h2>:
-            
-            products.map (prod => <Item detalle = {prod.id, prod.brand, prod.model, prod.photo} />
-                
-            )}
+            {loading? <h3>Cargando...</h3>: <ItemList products = {products}/>}
         </div>
     )
 }
