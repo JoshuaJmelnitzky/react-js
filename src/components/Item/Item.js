@@ -20,3 +20,5 @@ const Item = ({detalle}) => {
 }
 
 export default Item
+
+

@@ -5,8 +5,23 @@
 }
 
 .counter button{
-    margin: 35px;
-    padding: 25px 40px;
-    font-size: 40px;
+    font-size: 30px;
+    border: 1.5px solid #ddd;
+    border-radius: 25px;
+    text-align: center;
+    padding: 0.45rem 0.8rem;
+    outline: 0;
+    margin-right: 0.2rem;
+    margin-bottom: 1rem;
 }
 
+.addToCart{
+    background: #f64749;
+    color: white;
+    cursor: pointer;
+    display: flex;
+}
+
+.addToCart:hover{
+    opacity: 0.9;
+}

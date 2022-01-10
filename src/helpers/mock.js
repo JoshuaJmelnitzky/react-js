@@ -11,23 +11,23 @@ import waterCollingNzxt from '../assets/products/waterColling/kraken_z63.jpg'
 
 const products = [
 
-    { id: 1, brand: 'Corsair', model: 'RM 750', price: 15000, photo: fuenteCorsair},
+    { id: '1', brand: 'Corsair', model: 'RM 750', price: 15000, photo: fuenteCorsair},
 
-    { id: 2, brand: 'Seasonic', model: 'Focus gx850', price: 15000, photo: fuenteSeasonic},
+    { id: '2', brand: 'Seasonic', model: 'Focus gx850', price: 15000, photo: fuenteSeasonic},
     
-    { id: 3, brand: 'Azza', model: 'Apollo-430', price: 15000, photo: gabineteAzzaApollo},
+    { id: '3', brand: 'Azza', model: 'Apollo-430', price: 15000, photo: gabineteAzzaApollo},
     
-    { id: 4, brand: 'Azza', model: 'Pyramid', price: 15000, photo: gabineteAzzaPyramid},
+    { id: '4', brand: 'Azza', model: 'Pyramid', price: 15000, photo: gabineteAzzaPyramid},
 
-    { id: 5, brand: 'Gigabyte', model: 'Aorus xtreme 3080', price: 15000, photo: gpuAourus3080},
+    { id: '5', brand: 'Gigabyte', model: 'Aorus xtreme 3080', price: 15000, photo: gpuAourus3080},
 
-    { id: 6, brand: 'Asus', model: 'ROG 3070', price: 15000, photo: gpuRog3070},
+    { id: '6', brand: 'Asus', model: 'ROG 3070', price: 15000, photo: gpuRog3070},
 
-    { id: 7, brand: 'G-skill', model: 'Trident-z royale', price: 15000, photo: ramTrident},
+    { id: '7', brand: 'G-skill', model: 'Trident-z royale', price: 15000, photo: ramTrident},
 
-    { id: 8, brand: 'Corsair', model: 'MP510', price: 15000, photo: ssdCorsair},
+    { id: '8', brand: 'Corsair', model: 'MP510', price: 15000, photo: ssdCorsair},
 
-    { id: 9, brand: 'NZXT', model: 'Kraken Z63', price: 15000, photo: waterCollingNzxt},
+    { id: '9', brand: 'NZXT', model: 'Kraken Z63', price: 15000, photo: waterCollingNzxt},
 
 ];
 
