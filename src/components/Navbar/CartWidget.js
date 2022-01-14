@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaCartPlus } from 'react-icons/fa';
-import './Navbar.css'
+import './CartWidget.css'
 
 const CartWidget = () => {
     return (

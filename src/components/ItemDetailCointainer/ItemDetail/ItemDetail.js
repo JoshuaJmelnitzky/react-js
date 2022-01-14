@@ -6,7 +6,7 @@ const ItemDetail = ({product}) => {
     return (
         <div className='row productDetail'>
 
-            <div className='col-md-4 productDetail--list productDetail--center'>
+            <div className='col-md-4 productDetail--list'>
                 <div >
                     <img className='photo' src={product.photo} alt={product.brand + ' ' + product.model} />
                 </div>
@@ -19,7 +19,7 @@ const ItemDetail = ({product}) => {
                 </div>
 
                 <div className = "product-price">
-                    <p className = "price">Precio: <span>{product.price}</span></p>
+                    <p className = "price">Precio: <span>${product.price}</span></p>
                 </div>
 
                 <div className = "product-detail">

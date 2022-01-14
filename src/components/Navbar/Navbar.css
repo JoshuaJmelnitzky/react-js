@@ -1,4 +1,26 @@
-.cartwidget{
-    height: 35px;
-    width: 35px;
+
+.dropdown button{
+    background-color: #212529;
+    border: none;
 }
+
+.dropdown button:hover{
+    background-color: #212529;
+}
+
+.dropdown-item a{
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown-item:hover{
+    background-color: black;
+    text-decoration: none;
+}
+
+.dropdown-item:hover a{
+    color: white;
+}
+
+
+
