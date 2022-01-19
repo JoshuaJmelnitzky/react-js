@@ -1,8 +1,18 @@
 import React from 'react'
 import ItemCount from '../../ItemCount/ItemCount'
 import './ItemDetail.css'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const ItemDetail = ({product}) => {
+
+    const [show, setShow] = useState(true)
+
+    const onAdd = (contador) => {
+        setShow(false)
+    }
+
+
     return (
         <div className='row productDetail'>
 
@@ -29,7 +39,14 @@ const ItemDetail = ({product}) => {
                  </div>
 
                  <div className = "purchase-info">
-                    <ItemCount max={10}/>    
+                     {
+                         show? <ItemCount stock={product.stock} onAdd={onAdd}/> :
+                         <div className='buttonsCart'>
+                            <Link to='/cart'><button className='goToCart'>Terminar la compra</button></Link>
+                            <Link to='/'><button className='goToHome'>Seguir comprando</button></Link>
+                         </div>
+                     }
+                 
                 </div>
 
             </div>

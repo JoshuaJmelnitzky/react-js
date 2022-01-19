@@ -70,3 +70,29 @@
 .purchase-info{
     margin-top: 50px;
 }
+
+.purchase-info button{
+    font-size: 30px;
+    border: 1.5px solid #ddd;
+    border-radius: 25px;
+    text-align: center;
+    padding: 0.45rem 0.8rem;
+    outline: 0;
+    margin-right: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.goToCart{
+    background-color: #f64749;
+    color: white;
+}
+
+.goToHome{
+    background-color: #91C612;
+    color: white;
+}
+
+.buttonsCart{
+    display: flex;
+    justify-content: center;
+}

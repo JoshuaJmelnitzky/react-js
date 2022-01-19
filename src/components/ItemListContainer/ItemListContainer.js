@@ -12,7 +12,7 @@ const ItemListContainer = ({greeting}) => {
 
     useEffect(() => {
         if(idCategory){
-    
+            
             getFetch
             .then(resp => setProducts(resp.filter(prod => prod.category === idCategory)))
             .catch(err => console.log(err))
@@ -26,7 +26,6 @@ const ItemListContainer = ({greeting}) => {
         }
 
     }, [idCategory])
-
 
     return (
 

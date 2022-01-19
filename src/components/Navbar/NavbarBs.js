@@ -16,7 +16,7 @@ const NavbarBs = () => {
                 <Nav className="me-auto">
 
                     <DropdownButton className = 'dropdown' id="dropdown-basic-button" title="Productos">
-                        <Dropdown.Item><Link to= '/'>Productos</Link></Dropdown.Item>
+                        <Dropdown.Item ><Link to= '/'>Productos</Link></Dropdown.Item>
                         <Dropdown.Item ><Link to= '/category/gpu'>Placas de Video</Link></Dropdown.Item>
                         <Dropdown.Item ><Link to= '/category/fuentes'>Fuentes de alimentación</Link></Dropdown.Item>
                         <Dropdown.Item ><Link to= '/category/ram'>RAM</Link></Dropdown.Item>

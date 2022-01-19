@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import CartWidget from '../Navbar/CartWidget';
 import './ItemCount.css';
 
-const ItemCount = ({max}) => {
+const ItemCount = ({stock, onAdd}) => {
 
     const [counter, setCounter] = useState(1)
     const [cart, setCart] = useState(true)
@@ -10,7 +10,7 @@ const ItemCount = ({max}) => {
 
     const handleIncrement = () => {
         setCart(true)
-        counter < max? setCounter(prev => prev + 1): setCart(false)
+        counter < stock? setCounter(prev => prev + 1): setCart(false)
     }
 
     const handleDecrement = () =>{
@@ -18,9 +18,6 @@ const ItemCount = ({max}) => {
         counter > 1? setCounter(prev => prev - 1): setCart(false)
     }
 
-    const onAdd = () =>{
-        alert("Se ha añadido el producto al carrito")
-    }
 
     return (
         <div className='counter'>
@@ -32,7 +29,7 @@ const ItemCount = ({max}) => {
             <button onClick={handleIncrement}>+</button>
 
             {
-                cart? <button className='addToCart' onClick={onAdd}>Agregar al carrito <CartWidget/>  </button>: <button disabled>Agregar al carrito</button>
+                cart? <button className='addToCart' onClick={()=> onAdd(counter)}>Agregar al carrito <CartWidget/>  </button>: <button disabled>Agregar al carrito</button>
             }
 
 
