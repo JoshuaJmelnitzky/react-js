@@ -3,13 +3,17 @@ import ItemCount from '../../ItemCount/ItemCount'
 import './ItemDetail.css'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useCartContext } from '../../../Context/CartContext'
 
 const ItemDetail = ({product}) => {
 
     const [show, setShow] = useState(true)
 
+    const {addToCart} = useCartContext()
+
     const onAdd = (contador) => {
         setShow(false)
+        addToCart( {...product, qty: contador} )
     }
 
 

@@ -1,0 +1,24 @@
+.cart{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cart li{
+    margin-top: 10px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.cart button{
+    font-size: 30px;
+    border: 1.5px solid #ddd;
+    border-radius: 25px;
+    text-align: center;
+    padding: 0.45rem 0.8rem;
+    outline: 0;
+    margin-right: 0.2rem;
+    margin-bottom: 1rem;
+    background: #f64749;
+    color: white;
+}
