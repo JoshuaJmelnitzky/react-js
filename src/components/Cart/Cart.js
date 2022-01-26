@@ -1,6 +1,10 @@
 import { useCartContext } from '../../Context/CartContext';
 import React from 'react';
 import  './Cart.css';
+import CartItem from './CartItem';
+import Table from 'react-bootstrap/Table'
+import { Link } from 'react-router-dom';
+import { BsCartX } from 'react-icons/bs'
 
 const Cart = () => {
 
@@ -9,13 +13,47 @@ const Cart = () => {
     return (
         <div className='cart'>
 
-            {cartList.map(prod => <li key={prod.id}>{prod.brand} {prod.model} --- cant: {prod.qty}</li>)}
+            {cartList.length > 0?   <div>
+                                        <Table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Foto</th>
+                                                    <th>Marca</th>
+                                                    <th>Modelo</th>
+                                                    <th>Precio</th>
+                                                    <th>cantidad</th>
+                                                    <th>Subtotal</th>  
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
 
-            {cartList.length > 0? <button onClick={cleanCart}>Vaciar carrito</button>: "no hay nada en el carrito :( "}
+                                            <tbody className='justify-content-center'>
+                                                {cartList.map(cart=>
+                                                    <CartItem key={cart.id} item={cart}/>)}
+                                            </tbody>
+                                        </Table>
+
+
+                                        <div className='cleanCart'>
+                                            <button onClick={cleanCart}>Vaciar carrito</button>
+                                        </div>,
+
+                                    </div>
+            
+                                   
+            
+                                :   <div className='emptyCart'>
+                                        <h2>No hay productos en el carrito</h2>
+                                        <div className='cartIcon'>
+                                            <BsCartX/>
+                                        </div>
+                                        <Link to = '/'>
+                                            <button> Ver productos </button>
+                                        </Link>
+                                    </div>}
         </div>
     )
 }
 
 export default Cart
-
 

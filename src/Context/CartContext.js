@@ -37,13 +37,20 @@ export const CartContextProvider = ({children}) => {
         setCartList([])
     }
 
-    console.log(cartList)
+    
+    function deleteItem(item){
+        const itemID = cartList.findIndex(i => i.id === item.id)
+        cartList.splice(itemID,1)
+        setCartList([...cartList])
+
+    }
 
     return(
         <CartContext.Provider value={{
             cartList,   
             addToCart,
             cleanCart,
+            deleteItem,
         }}>
         
             {children}

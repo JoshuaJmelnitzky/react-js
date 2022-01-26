@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { getFetch } from '../../helpers/mock'
+import { ClipLoader} from 'react-spinners'
 import ItemList from './ItemList'
 
 const ItemListContainer = ({greeting}) => {
@@ -31,7 +32,7 @@ const ItemListContainer = ({greeting}) => {
 
         <div>
             <h1>{greeting}</h1>
-            {loading? <h3>Cargando...</h3>: <ItemList products = {products}/>}
+            {loading? <ClipLoader/>: <ItemList products = {products}/>}
         </div>
     )
 }
