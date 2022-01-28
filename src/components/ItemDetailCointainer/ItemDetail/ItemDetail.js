@@ -21,7 +21,7 @@ const ItemDetail = ({product}) => {
 
             <div className='col-md-4 productDetail--list'>
                 <div >
-                    <img className='photo' src={product.imgUrl} alt={product.brand + ' ' + product.name} />
+                    <img className='photo' src={product.img} alt={product.brand + ' ' + product.name} />
                 </div>
             </div>
 
