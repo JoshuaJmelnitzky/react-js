@@ -1,4 +1,3 @@
-import React from 'react'
 import ItemCount from '../../ItemCount/ItemCount'
 import './ItemDetail.css'
 import { useState } from 'react'
@@ -22,13 +21,13 @@ const ItemDetail = ({product}) => {
 
             <div className='col-md-4 productDetail--list'>
                 <div >
-                    <img className='photo' src={product.photo} alt={product.brand + ' ' + product.model} />
+                    <img className='photo' src={product.imgUrl} alt={product.brand + ' ' + product.name} />
                 </div>
             </div>
 
             <div className='col-md-4 productDetail--list'>
                 <div className='product-Content'>
-                    <h2 className = "product-title">{product.brand + ' ' + product.model}</h2>
+                    <h2 className = "product-title">{product.brand + ' ' + product.name}</h2>
 
                 </div>
 

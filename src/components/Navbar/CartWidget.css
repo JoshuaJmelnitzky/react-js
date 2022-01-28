@@ -1,4 +1,14 @@
-.cartwidget{
-    height: 35px;
-    width: 35px;
+.cartWidget--icon{
+    height: 50px;
+    width: 50px;
+    margin-left: 50px;
+}
+
+.cartWidget--circle{
+    position: relative;
+    transform: translate(95px, 15px);
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background: #5cb85c;
 }

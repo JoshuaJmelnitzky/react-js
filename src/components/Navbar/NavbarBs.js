@@ -1,4 +1,3 @@
-import React from 'react'
 import './Navbar.css'
 import Container from 'react-bootstrap/Container';
 import { Navbar, Nav, Dropdown, DropdownButton} from 'react-bootstrap';
@@ -31,7 +30,7 @@ const NavbarBs = () => {
                     <Nav.Link href="#Ayuda">Ayuda</Nav.Link>
 
                     <Link to ='/cart'>
-                        <CartWidget/>
+                        <CartWidget show = {true}/>
                     </Link>
                 </Nav>
             </Container>

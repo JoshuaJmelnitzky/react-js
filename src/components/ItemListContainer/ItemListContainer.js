@@ -1,9 +1,8 @@
-import React from 'react'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { getFetch } from '../../helpers/mock'
 import { ClipLoader} from 'react-spinners'
 import ItemList from './ItemList'
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
 
 const ItemListContainer = ({greeting}) => {
     const [products, setProducts] = useState([])
@@ -12,24 +11,19 @@ const ItemListContainer = ({greeting}) => {
     const {idCategory} = useParams()
 
     useEffect(() => {
-        if(idCategory){
-            
-            getFetch
-            .then(resp => setProducts(resp.filter(prod => prod.category === idCategory)))
+        const db = getFirestore()
+        
+        const queryCollection = idCategory? query(collection(db, 'items'), where('category', '==', idCategory)): query(collection(db, 'items'))
+
+        getDocs(queryCollection)
+            .then(resp => setProducts(resp.docs.map(prod => ({ id: prod.id, ...prod.data() }))))
             .catch(err => console.log(err))
             .finally(() => setLoading(false))
 
-        }else{
-            getFetch
-            .then(resp => setProducts(resp))
-            .catch(err => console.log(err))
-            .finally(() => setLoading(false))
-        }
 
     }, [idCategory])
 
     return (
-
         <div>
             <h1>{greeting}</h1>
             {loading? <ClipLoader/>: <ItemList products = {products}/>}

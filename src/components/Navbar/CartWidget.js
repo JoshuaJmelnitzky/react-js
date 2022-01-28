@@ -2,10 +2,15 @@ import React from 'react'
 import { FaCartPlus } from 'react-icons/fa';
 import './CartWidget.css'
 
-const CartWidget = () => {
+const CartWidget = ({show}) => {
+
     return (
-        <div>
-            <FaCartPlus className='cartwidget'/>
+        <div className='cartWidget'>
+            {show? <div className='cartWidget--circle'>
+
+            </div>: ''}
+
+            <FaCartPlus className='cartWidget--icon'/>
         </div>
     )
 }

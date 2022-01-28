@@ -29,7 +29,7 @@ const ItemCount = ({stock, onAdd}) => {
             <button onClick={handleIncrement}>+</button>
 
             {
-                cart? <button className='addToCart' onClick={()=> onAdd(counter)}>Agregar al carrito <CartWidget/>  </button>: <button disabled>Agregar al carrito</button>
+                cart? <button className='addToCart' onClick={()=> onAdd(counter)}>Agregar al carrito <CartWidget show={false}/>  </button>: <button disabled>Agregar al carrito</button>
             }
 
 
