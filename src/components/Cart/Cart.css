@@ -40,3 +40,13 @@
     align-items: center;
     margin-top: 50px;
 }
+
+.order{
+    text-align: center;
+    position: relative;
+    top: 100px;
+}
+
+.order button{
+    background-color: #5cb85c;
+}

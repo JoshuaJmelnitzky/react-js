@@ -10,7 +10,7 @@ const NavbarBs = () => {
         <Navbar bg="dark" variant="dark">
             <Container>
 
-                <Link to='./'><img src={logo} alt="logo" style={{height: '60px', width: '220px' }}/></Link>
+                <Link to='/'><img src={logo} alt="logo" style={{height: '60px', width: '220px' }}/></Link>
          
                 <Nav className="me-auto">
 

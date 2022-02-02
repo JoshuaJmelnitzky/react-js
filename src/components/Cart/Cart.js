@@ -4,10 +4,32 @@ import CartItem from './CartItem';
 import Table from 'react-bootstrap/Table'
 import { Link } from 'react-router-dom';
 import { BsCartX } from 'react-icons/bs'
+import { addDoc, collection, getFirestore } from 'firebase/firestore'
 
 const Cart = () => {
 
-    const { cartList, cleanCart} = useCartContext()
+    const { cartList, cleanCart, totalPrice} = useCartContext()
+
+    const makePurchase = async () => {
+        let order = {}
+        order.buyer = {name: 'Joshua', email: 'joshuajmelnitzkysj@gmail.com', phone: 123456789}
+        order.total = totalPrice();
+
+        order.items = cartList.map(cartItem => {
+            const id = cartItem.id;
+            const name = cartItem.name;
+            const price = cartItem.price * cartItem.qty;
+
+            return {id, name, price}
+        })
+
+        const db = getFirestore()
+        const orderCollection = collection(db, 'orders')
+        await addDoc(orderCollection, order)
+        .then(resp => console.log(resp))
+        .catch(err => console.log(err))
+
+    }
 
     return (
         <div className='cart'>
@@ -35,6 +57,10 @@ const Cart = () => {
 
                                         <div className='cleanCart'>
                                             <button onClick={cleanCart}>Vaciar carrito</button>
+                                        </div>,
+                                        
+                                        <div className='order'>
+                                            <button onClick={makePurchase}>Generar orden</button>
                                         </div>,
 
                                     </div>
