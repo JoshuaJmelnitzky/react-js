@@ -5,14 +5,28 @@ import Table from 'react-bootstrap/Table'
 import { Link } from 'react-router-dom';
 import { BsCartX } from 'react-icons/bs'
 import { addDoc, collection, getFirestore } from 'firebase/firestore'
+import { useState } from 'react';
+import Form from 'react-bootstrap/Form'
+import {Container} from 'react-bootstrap'
+import Swal from 'sweetalert2'
 
 const Cart = () => {
 
-    const { cartList, cleanCart, totalPrice} = useCartContext()
+    const { cartList, cleanCart, totalPrice} = useCartContext();
 
-    const makePurchase = async () => {
+    const [ idOrden, setIdOrden] = useState('');
+
+    const [ dataForm , setDataForm ] = useState({
+        email: '',
+        name: '',
+        phone: '',
+    });
+
+    
+    const makePurchase = async (e) => {
+        e.preventDefault()
         let order = {}
-        order.buyer = {name: 'Joshua', email: 'joshuajmelnitzkysj@gmail.com', phone: 123456789}
+        order.buyer = dataForm
         order.total = totalPrice();
 
         order.items = cartList.map(cartItem => {
@@ -26,10 +40,37 @@ const Cart = () => {
         const db = getFirestore()
         const orderCollection = collection(db, 'orders')
         await addDoc(orderCollection, order)
-        .then(resp => console.log(resp))
+        .then(resp => setIdOrden(resp.id))
         .catch(err => console.log(err))
-
     }
+
+    function handleChange(e) {
+        setDataForm({
+            ...dataForm,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    function successPurchase() {
+        Swal.fire({
+            timer: 3000,
+            title: 'Producto añadido',
+            text: `El número de orden es ${idOrden}`,
+            icon: 'success',
+            showConfirmButton: false,
+            backdrop:  `rgba(0,0,0,0.6)
+                        left top
+                        no-repeat
+                        `
+        })
+        
+        setDataForm({
+            email: '',
+            name: '',
+            phone: '',
+        })
+    }
+
 
     return (
         <div className='cart'>
@@ -54,19 +95,44 @@ const Cart = () => {
                                             </tbody>
                                         </Table>
 
+                                        <Container className='formContainer' >
+                                            <Form  onSubmit={makePurchase} >
 
+                                            <Form.Group className="mb-3">
+                                                <Form.Label>Nombre y apellido</Form.Label>
+                                                <Form.Control type="text" required="required" name='name'  placeholder="Ingrese su nombre" onChange={handleChange}
+                                                value={dataForm.name}/>
+                                            </Form.Group>
+
+                                            <Form.Group className="mb-3">
+                                                <Form.Label>Telefono</Form.Label>
+                                                <Form.Control type="number" required="required"  name='phone' placeholder='tel' onChange={handleChange} value={dataForm.phone}/>
+                                            </Form.Group>
+
+
+                                                
+                                                <Form.Group className="mb-3" controlId="formBasicEmail">
+                                                <Form.Label>Email</Form.Label>
+                                                <Form.Control type="email" required="required" name='email' placeholder='email' onChange={handleChange}value={dataForm.email} />
+                                            </Form.Group>
+
+                                            <div className='order'> 
+                                                <button variant="primary" type="submit" onClick={successPurchase}>Finalizar compra</button>
+                                            </div>
+                                        
+                                            </Form>
+                                        </Container>
+
+                
                                         <div className='cleanCart'>
                                             <button onClick={cleanCart}>Vaciar carrito</button>
-                                        </div>,
-                                        
-                                        <div className='order'>
-                                            <button onClick={makePurchase}>Generar orden</button>
                                         </div>,
 
                                     </div>
             
-                                   
-            
+
+
+                                                    
                                 :   <div className='emptyCart'>
                                         <h2>No hay productos en el carrito</h2>
                                         <div className='cartIcon'>

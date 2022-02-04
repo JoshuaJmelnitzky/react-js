@@ -1,4 +1,4 @@
-.btn-close{
-    position: relative;
-    left: 10px;
+.deleteProduct{
+    color: red ;
+    cursor: pointer;
 }

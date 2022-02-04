@@ -15,6 +15,7 @@
     margin-bottom: 1rem;
     background: #f64749;
     color: white;
+    width: 300px;
 }
 
 .cart table, .cleanCart{
@@ -44,9 +45,16 @@
 .order{
     text-align: center;
     position: relative;
-    top: 100px;
+    top: 50px;
 }
 
-.order button{
+.formContainer button{
     background-color: #5cb85c;
+    align-content: center;
+    margin-bottom: 50px;
+}
+
+.formContainer {
+    position: relative;
+    top: 100px;
 }

@@ -8,7 +8,6 @@ import Cart from './components/Cart/Cart';
 import { CartContextProvider } from './Context/CartContext';
 
 
-
 const App = () => {
     return ( 
         <CartContextProvider>
@@ -20,6 +19,7 @@ const App = () => {
                         <Route exact path='/category/:idCategory' element={<ItemListContainer greeting='Bienvenidos a HardBuy - Tienda de hardware'/>}/>
 
                         <Route exact path='/ItemDetail/:idDetail' element={<ItemDetailContainer/>}/>
+                        
                         <Route exact path='/cart' element={<Cart/>}/>
                     </Routes>
             
