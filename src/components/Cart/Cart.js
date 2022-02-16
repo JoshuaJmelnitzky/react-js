@@ -1,13 +1,10 @@
 import { useCartContext } from '../../Context/CartContext';
 import  './Cart.css';
 import CartItem from './CartItem';
-import Table from 'react-bootstrap/Table'
 import { Link } from 'react-router-dom';
 import { BsCartX } from 'react-icons/bs'
 import { addDoc, collection, getFirestore } from 'firebase/firestore'
 import { useState } from 'react';
-import Form from 'react-bootstrap/Form'
-import {Container} from 'react-bootstrap'
 import Swal from 'sweetalert2'
 
 const Cart = () => {
@@ -51,6 +48,7 @@ const Cart = () => {
         })
     }
 
+
     function successPurchase() {
         Swal.fire({
             timer: 3000,
@@ -64,73 +62,28 @@ const Cart = () => {
                         `
         })
         
-        setDataForm({
-            email: '',
-            name: '',
-            phone: '',
-        })
     }
-
 
     return (
         <div className='cart'>
 
-            {cartList.length > 0?   <div>
-                                        <Table>
-                                            <thead>
-                                                <tr>
-                                                    <th>Foto</th>
-                                                    <th>Marca</th>
-                                                    <th>Modelo</th>
-                                                    <th>Precio</th>
-                                                    <th>cantidad</th>
-                                                    <th>Subtotal</th>  
-                                                    <th></th>
-                                                </tr>
-                                            </thead>
+            {cartList.length > 0?   <>
+                                        <section class="col-lg-6 col-md-6 cart__list" id="cart">
+                                            {cartList.map(cart=><CartItem key={cart.id} item={cart}/>)}
+                                        </section>
 
-                                            <tbody className='justify-content-center'>
-                                                {cartList.map(cart=>
-                                                    <CartItem key={cart.id} item={cart}/>)}
-                                            </tbody>
-                                        </Table>
-
-                                        <Container className='formContainer' >
-                                            <Form  onSubmit={makePurchase} >
-
-                                            <Form.Group className="mb-3">
-                                                <Form.Label>Nombre y apellido</Form.Label>
-                                                <Form.Control type="text" required="required" name='name'  placeholder="Ingrese su nombre" onChange={handleChange}
-                                                value={dataForm.name}/>
-                                            </Form.Group>
-
-                                            <Form.Group className="mb-3">
-                                                <Form.Label>Telefono</Form.Label>
-                                                <Form.Control type="number" required="required"  name='phone' placeholder='tel' onChange={handleChange} value={dataForm.phone}/>
-                                            </Form.Group>
-
-
-                                                
-                                                <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                <Form.Label>Email</Form.Label>
-                                                <Form.Control type="email" required="required" name='email' placeholder='email' onChange={handleChange}value={dataForm.email} />
-                                            </Form.Group>
-
-                                            <div className='order'> 
-                                                <button variant="primary" type="submit" onClick={successPurchase}>Finalizar compra</button>
+                                        <section class = "col-md-4 col-lg-4 cart__total" id="checkout">
+                                            <div class = "col-md-10 col-lg-10 cart__border cart__checkout">
+                                                <h2>Resumen del pedido</h2>
+                                                <h3>${totalPrice()}</h3>
                                             </div>
-                                        
-                                            </Form>
-                                        </Container>
+                                        </section>
 
-                
                                         <div className='cleanCart'>
                                             <button onClick={cleanCart}>Vaciar carrito</button>
                                         </div>,
 
-                                    </div>
-            
-
+                                    </>
 
                                                     
                                 :   <div className='emptyCart'>
@@ -138,9 +91,10 @@ const Cart = () => {
                                         <div className='cartIcon'>
                                             <BsCartX/>
                                         </div>
-                                        <Link to = '/'>
+                                        <Link to = '/products'>
                                             <button> Ver productos </button>
                                         </Link>
+
                                     </div>}
         </div>
     )

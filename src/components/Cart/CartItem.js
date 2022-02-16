@@ -1,8 +1,6 @@
 import { useCartContext } from '../../Context/CartContext';
-import './CartItem.js'
-import { AiOutlineClose } from 'react-icons/ai'
-;
-
+import './CartItem.css';
+import {BsFillTrashFill} from 'react-icons/bs'
 
 const CartItem = ({item}) => {
 
@@ -14,17 +12,26 @@ const CartItem = ({item}) => {
     }
 
     return (
-                    <tr key={item.id} className='w-100'>
-                            <td><img src={item.img} alt={`${item.brand} ${item.name}`} style={{width: '50px'}}/></td>
-                            <td>{item.brand}</td>
-                            <td>{item.name}</td>
-                            <td>${item.price}</td>
-                            <td>{item.qty}</td>
-                            <td>{item.qty * item.price}</td>
-                            <td></td>
-                            <td><AiOutlineClose className = "deleteProduct" onClick={deleteProduct}/></td>
-                    </tr>
+        <div className = "cart__border">
 
+            <div className = "cart__detail col-md-4 col-lg-4">
+                <img src={item.img} alt={`${item.brand} ${item.name}`} style={{width: '50px'}}/>
+                <li>{item.brand} {item.name}</li>
+            </div>
+
+            <div className = "col-md-4 cart__qty">
+                {item.qty} unidad/es
+            </div>
+
+            <div className = "cart__price col-md-2">
+                ${item.price*item.qty}
+            </div>
+
+            <div className = "col-md-2">
+                <BsFillTrashFill className = "deleteProduct" onClick={deleteProduct}/>
+            </div>
+
+        </div>
     )
 };
 

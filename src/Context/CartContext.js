@@ -31,6 +31,10 @@ export const CartContextProvider = ({children}) => {
         }
 
     }
+
+    function countItems(){
+        return cartList.map(productosCart=>productosCart.qty).reduce((prev,curr) => prev+curr,0)
+    }
     
     function totalPrice(){
         return cartList.reduce((acum, prod) => acum + (prod.qty * prod.price), 0)
@@ -54,7 +58,8 @@ export const CartContextProvider = ({children}) => {
             addToCart,
             cleanCart,
             deleteItem,
-            totalPrice}}>
+            totalPrice,
+            countItems}}>
         
             {children}
         </CartContext.Provider> 

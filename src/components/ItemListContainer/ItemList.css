@@ -1,9 +1,11 @@
 .listadoProductos{
     display: flex;
     flex-wrap: wrap;
-    margin: 100px;
-}
-
-.listadoProductos--allign{
+    width: 100%;
     justify-content: center;
 }
+
+.listadoProductos a{
+    text-decoration: none;
+}
+

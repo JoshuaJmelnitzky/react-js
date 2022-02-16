@@ -5,17 +5,13 @@ import './ItemCount.css';
 const ItemCount = ({stock, onAdd}) => {
 
     const [counter, setCounter] = useState(1)
-    const [cart, setCart] = useState(true)
-
 
     const handleIncrement = () => {
-        setCart(true)
-        counter < stock? setCounter(prev => prev + 1): setCart(false)
+        if (counter < stock) setCounter(prev => prev + 1)
     }
 
     const handleDecrement = () =>{
-        setCart(true)
-        counter > 1? setCounter(prev => prev - 1): setCart(false)
+        if (counter > 1) setCounter(prev => prev - 1)
     }
 
 
@@ -29,7 +25,7 @@ const ItemCount = ({stock, onAdd}) => {
             <button onClick={handleIncrement}>+</button>
 
             {
-                cart? <button className='addToCart' onClick={()=> onAdd(counter)}>Agregar al carrito <CartWidget show={false}/>  </button>: <button disabled>Agregar al carrito</button>
+               <button className='addToCart' onClick={()=> onAdd(counter)}>Agregar al carrito <CartWidget show={false} /></button>
             }
 
 

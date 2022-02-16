@@ -1,7 +1,19 @@
+a{
+    text-decoration: none;
+}
+
 .cartWidget--icon{
     height: 50px;
     width: 50px;
     margin-left: 50px;
+    color: white;
+}
+
+.cartWidget--circle p{
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
 }
 
 .cartWidget--circle{

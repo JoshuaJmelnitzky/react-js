@@ -1,7 +1,16 @@
+.cart{
+    display: flex;
+    justify-content: center;
+}
+
 .cart li{
     margin-top: 10px;
     font-size: 20px;
     margin-bottom: 10px;
+}
+
+.cart__list{
+    min-height: 600px;
 }
 
 .cart button{
@@ -39,7 +48,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
+    justify-content: center;
+    min-height: 600px;
 }
 
 .order{

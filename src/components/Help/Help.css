@@ -1,0 +1,37 @@
+.preguntas__help h2, .contacto__help h2 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 30px; 
+    text-align: center;
+}
+
+.preguntas__help .preguntas__texto, .contacto__help .preguntas__texto {
+    color: grey;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px; 
+}
+
+.preguntas__help .preguntas__texto div, .contacto__help .preguntas__texto div {
+    margin-bottom: 30px; 
+}
+
+.preguntas__help .preguntas__texto div span, .contacto__help .preguntas__texto div span {
+    color: #90C512 !important;
+    font-weight: 700; 
+}
+  
+.preguntas__help .ayudaContacto, .contacto__help .ayudaContacto {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 70px; 
+    justify-content: center;
+}
+
+.preguntas__help .ayudaContacto div, .contacto__help .ayudaContacto div {
+    margin: 25px; 
+}
+

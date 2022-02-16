@@ -1,0 +1,11 @@
+#rgbar {
+    background: linear-gradient(45deg, red 0%, magenta 18%, blue 30%, #00f0ff 45%, yellow 80%, #ff7800 90%, red 100%);
+    background-size: 400% 400%;
+    height: 3px;
+    animation: rgbBg 20s linear infinite; }
+  
+  @keyframes rgbBg {
+    0% {
+      background-position: 400% 0%; }
+    100% {
+      background-position: 0% 400%; } }

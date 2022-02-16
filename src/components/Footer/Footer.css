@@ -1,0 +1,121 @@
+footer h3 {
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold; 
+}
+
+.footer__info a:hover {
+    text-decoration: none;
+    color: #eee !important; 
+}
+
+.footer__info {
+    border-top: groove 1px black;
+    border-bottom: groove 1px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    font-family: Helvetica;
+    background-color: #2D2D33;
+    height: 75px; 
+}
+
+.footer__info__links {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    color: #eee; 
+    text-decoration: none;
+}
+ 
+.footer__redes {
+    height: 150px;
+    background-color: #92E6A7;
+    flex-direction: column;
+    padding-left: 40px; 
+}
+
+.footer__logo__imagenes--margin {
+    margin-right: 20px; 
+}
+    
+.footer__contacto {
+    display: flex;
+    background-color: #92E6A7;
+    flex-direction: column;
+    align-content: flex-end;
+    align-items: flex-end;
+    padding-right: 40px; 
+}
+
+
+.footer__contacto a img {
+    margin-right: 10px; 
+}
+    
+.footer__logos--animated {
+    display: flex;
+    flex-direction: row; 
+}
+
+.footer__logos--animated .icon-cont:hover {
+    transform: translateY(-8px);
+    transition: all 0.3s; 
+}
+
+.redes__text {
+    color: #91C612;
+    margin-left: 15px;
+    margin-bottom: 25px; 
+}
+  
+.redes__text__contacto {
+    margin-right: 15px; 
+}
+
+.icon-cont {
+    height: 42px;
+    width: 42px;
+    background-color: #91C612;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 17px; 
+}
+    
+.icon-cont a .redes__color {
+    color: #fff;
+    font-size: 25px; 
+}
+
+@media only screen and (max-width: 1200px) {
+    .footer__redes {
+        display: flex;
+        align-items: center;
+        padding-left: 0px; 
+    }
+
+    .footer__redes h3 {
+        margin-bottom: 15px; 
+    } 
+
+    .footer__contacto {
+        display: flex;
+        align-items: center; 
+    }
+
+    .footer__contacto h3 {
+        margin-bottom: 15px; 
+    } 
+
+    .footer__info__links {
+        font-size: 15px;
+        margin-left: 5px;
+        margin-right: 10px;
+        text-align: center; 
+    } 
+
+}
+    
