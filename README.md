@@ -1,10 +1,10 @@
 #Hard buy :tw-1f4c8:
 ![](https://res.cloudinary.com/dk8yfwthp/image/upload/v1645064556/react-hardbuy/indexPage_mf8hzw.png)
 
-#Link al Demo
+# Link al Demo
 https://elated-varahamihira-c5345e.netlify.app
 
-##Comenzando :fa-music: 🚀
+## Comenzando :fa-music: 🚀
 - Hard buy es un E-COMMERCE de productos tecnologicos que se encarga de facilitar la compra de los mismo a travez de las distintas fucionalidades del sitio web.
 
 # Pre-requisitos para el correcto funcionamiento  📋
