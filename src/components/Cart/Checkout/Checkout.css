@@ -1,0 +1,36 @@
+.formContainer{
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+}
+
+.order{
+    text-align: center;
+}
+
+.order button{
+    margin-top: 50px;
+    font-size: 20px;
+    border: 1.5px solid #ddd;
+    border-radius: 25px;
+    padding: 0.45rem 0.8rem;
+    outline: 0;
+    margin-right: 0.2rem;
+    color: white;
+    width: 250px;
+    background: red;
+}
+
+.inputCheckout{
+    margin-bottom: 20px;
+}
+
+.cartBorder--checkout div{
+    margin-top: 0px;
+}
+
+.cartCheckout--total{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}

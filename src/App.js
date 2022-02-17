@@ -10,7 +10,7 @@ import CarouselIndex from './components/Carousel/CarouselIndex';
 import Products from './components/Products/Products';
 import Account from './components/Account/Account';
 import Help from './components/Help/Help';
-
+import Checkout from './components/Cart/Checkout/Checkout';
 
 const App = () => {
     return ( 
@@ -31,8 +31,11 @@ const App = () => {
                         <Route exact path='/ItemDetail/:idDetail' element={<ItemDetailContainer/>}/>
 
                         <Route exact path='/help/' element={<Help/>}/>
+
+                        <Route exact path='/checkout' element={<Checkout/>}/>
                         
                         <Route exact path='/cart' element={<Cart/>}/>
+
 
                     </Routes>
                 </div>

@@ -29,7 +29,6 @@
     padding: 20px;
     margin-bottom: 15px;
     margin-top: 50px;
-    margin-bottom: 50px;
     display: flex;
     align-items: center;
 }
@@ -106,4 +105,7 @@
     margin-bottom: 50px;
 }
 
+.buttonDisabled{
+    background: #808080;
+}
 
