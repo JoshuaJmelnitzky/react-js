@@ -9,3 +9,20 @@
     text-decoration: none;
 }
 
+.itemCategoryEmpty{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.itemCategoryEmpty button{
+    margin-top: 30px;
+    font-size: 20px;
+    border: 1.5px solid #ddd;
+    border-radius: 20px;
+    text-align: center;
+    padding: 0.45rem 0.8rem;
+    background: #f64749;
+    color: white;
+    cursor: pointer;
+}

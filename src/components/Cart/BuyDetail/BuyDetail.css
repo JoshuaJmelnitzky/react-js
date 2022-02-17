@@ -1,0 +1,23 @@
+.buyDetail{
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.buyDetail button{
+    font-size: 20px;
+    border: 1.5px solid #ddd;
+    border-radius: 20px;
+    text-align: center;
+    padding: 0.45rem 0.8rem;
+    color: white;
+    width: 200px;
+    background-color: #91C612;
+}
+
+.buyDetail svg{
+    font-size: 100px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}

@@ -8,7 +8,6 @@ const CartItem = ({item}) => {
 
     function deleteProduct(){
         deleteItem(item)
-        console.log("Producto eliminado")
     }
 
     return (

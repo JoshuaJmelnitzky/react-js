@@ -49,13 +49,6 @@ const NavbarBs= () => {
                 <li className="nav-item active nav__links">
                   <Link to='/products' className="nav-link">Productos</Link>
                 </li>
-                <li className="nav-item dropdown menu  nav__links">
-                  <a className="nav-link dropdown-toggle" href="./views/buildpc.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Arma tu PC</a>
-                  <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a className="dropdown-item" href="./views/error404.html">AMD</a>
-                    <a className="dropdown-item" href="./views/error404.html">Intel</a>
-                  </div>
-                </li>
                 <li className="nav-item nav__links">
                   <Link to='/account' className="nav-link">Mi Cuenta</Link>
                 </li>

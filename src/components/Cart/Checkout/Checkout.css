@@ -21,6 +21,11 @@
     background: red;
 }
 
+.order button:hover{
+    border: 1.5px solid #ddd;
+    background: red;
+}
+
 .inputCheckout{
     margin-bottom: 20px;
 }

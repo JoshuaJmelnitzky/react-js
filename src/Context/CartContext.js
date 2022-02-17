@@ -1,4 +1,5 @@
 import { useState, useContext, createContext } from "react";
+import { addDoc, collection, getFirestore } from 'firebase/firestore'
 
 const CartContext =  createContext([]) 
 
@@ -9,6 +10,40 @@ export function useCartContext() {
 
 export const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState ([])
+
+    const [idOrder, setIdOrder] = useState('');
+
+    const[ generatedOrder, setGeneratedOrder ] = useState(false)
+
+    const [ dataForm , setDataForm ] = useState({
+        email: '',
+        name: '',
+        phone: '',
+    }); 
+
+
+    const makePurchase = async (e) => {
+        e.preventDefault()
+        let order = {}
+        order.buyer = dataForm
+        order.total = totalPrice();
+    
+        order.items = cartList.map(cartItem => {
+            const id = cartItem.id;
+            const name = cartItem.name;
+            const price = cartItem.price * cartItem.qty;
+    
+            return {id, name, price}
+        })
+    
+        const db = getFirestore()
+        const orderCollection = collection(db, 'orders')
+        await addDoc(orderCollection, order)
+        .then(resp => setIdOrder(resp.id))
+        .catch(err => console.log(err))
+        .finally(()=>setGeneratedOrder(true))
+    }
+
 
     function addToCart(items) {
 
@@ -32,8 +67,18 @@ export const CartContextProvider = ({children}) => {
 
     }
 
+    function rebootCart(){
+        setCartList([])
+        setGeneratedOrder(false)
+        setDataForm({   email: '',
+                        name: '',
+                        phone: '',})
+        setIdOrder('')
+        }
+
+
     function countItems(){
-        return cartList.map(productosCart=>productosCart.qty).reduce((prev,curr) => prev+curr,0)
+        return cartList.map(productosCart=>productosCart.qty).reduce((prev,next) => prev+next,0)
     }
     
     function totalPrice(){
@@ -55,11 +100,18 @@ export const CartContextProvider = ({children}) => {
     return(
         <CartContext.Provider value={{
             cartList,   
+            dataForm,
+            idOrder,
+            generatedOrder,
+            rebootCart,
             addToCart,
             cleanCart,
             deleteItem,
             totalPrice,
-            countItems}}>
+            countItems,
+            makePurchase,
+            setDataForm,
+            setGeneratedOrder}}>
         
             {children}
         </CartContext.Provider> 

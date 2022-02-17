@@ -20,6 +20,7 @@ const App = () => {
                     <Navbar/>
 
                     <Routes>
+
                         <Route exact path='/' element={<CarouselIndex />}/>
 
                         <Route exact path='/category/:idCategory' element={<ItemListContainer/>}/>
@@ -35,7 +36,6 @@ const App = () => {
                         <Route exact path='/checkout' element={<Checkout/>}/>
                         
                         <Route exact path='/cart' element={<Cart/>}/>
-
 
                     </Routes>
                 </div>

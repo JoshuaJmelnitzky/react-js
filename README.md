@@ -1,8 +1,11 @@
-#Hard buy :tw-1f4c8:
-![](https://res.cloudinary.com/dk8yfwthp/image/upload/v1645064556/react-hardbuy/indexPage_mf8hzw.png)
-
 # Link al Demo
-https://elated-varahamihira-c5345e.netlify.app
+https://blissful-mirzakhani-3f3696.netlify.app
+
+## Gif recorriendo el sitio web
+![](https://media.giphy.com/media/Zo3yNrhk3ArBM3NWvx/giphy.gif)
+
+# Hard buy :tw-1f4c8:
+![](https://res.cloudinary.com/dk8yfwthp/image/upload/v1645064556/react-hardbuy/indexPage_mf8hzw.png)
 
 ## Comenzando :fa-music: 🚀
 - Hard buy es un E-COMMERCE de productos tecnologicos que se encarga de facilitar la compra de los mismo a travez de las distintas fucionalidades del sitio web.
@@ -42,4 +45,4 @@ Podremos ejectuar nuestro proyecto utilizando
 
 
 
-###End  
+### End  

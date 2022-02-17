@@ -11,7 +11,7 @@ const Products = () => {
                 <div  className="clasificacion__item">
                     <h2 className="clasificacion__titulo  clasificacion__border">Categorías</h2>
                     <ul>    
-                        <li>Procesadores</li>
+                        <Link to='/category/proccessor'><li>Procesadores</li></Link>
                         <Link to='/category/case'><li>Gabinetes</li></Link>
                         <Link to='/category/motherboard'><li>Motherboard</li></Link>
                         <Link to='/category/gpu'><li>Placas de video</li></Link>
